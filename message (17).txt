@@ -1,0 +1,117 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.fromRGB(100, 100, 100)
+frame.Active = true 
+frame.Draggable = true 
+frame.Parent = screenGui
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "Coco VIP Login System"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+title.BorderSizePixel = 0
+title.Font = Enum.Font.SourceSansBold
+title.TextSize = 20
+title.Parent = frame
+
+local usernameLabel = Instance.new("TextLabel")
+usernameLabel.Size = UDim2.new(1, -20, 0, 30)
+usernameLabel.Position = UDim2.new(0, 10, 0, 50)
+usernameLabel.Text = "Username:"
+usernameLabel.TextColor3 = Color3.new(1, 1, 1)
+usernameLabel.BackgroundTransparency = 1
+usernameLabel.Font = Enum.Font.SourceSans
+usernameLabel.TextSize = 18
+usernameLabel.TextXAlignment = Enum.TextXAlignment.Left
+usernameLabel.Parent = frame
+
+local UsernameInput = Instance.new("TextBox")
+UsernameInput.Size = UDim2.new(1, -20, 0, 30)
+UsernameInput.Position = UDim2.new(0, 10, 0, 80)
+UsernameInput.PlaceholderText = "Enter your username"
+UsernameInput.TextColor3 = Color3.new(0, 0, 0)
+UsernameInput.BackgroundTransparency = 0.8
+UsernameInput.BackgroundColor3 = Color3.new(1, 1, 1)
+UsernameInput.TextWrapped = true
+UsernameInput.Font = Enum.Font.SourceSans
+UsernameInput.TextSize = 18
+UsernameInput.Parent = frame
+
+local passwordLabel = Instance.new("TextLabel")
+passwordLabel.Size = UDim2.new(1, -20, 0, 30)
+passwordLabel.Position = UDim2.new(0, 10, 0, 120)
+passwordLabel.Text = "Password:"
+passwordLabel.TextColor3 = Color3.new(1, 1, 1)
+passwordLabel.BackgroundTransparency = 1
+passwordLabel.Font = Enum.Font.SourceSans
+passwordLabel.TextSize = 18
+passwordLabel.TextXAlignment = Enum.TextXAlignment.Left
+passwordLabel.Parent = frame
+
+local PasswordInput = Instance.new("TextBox")
+PasswordInput.Size = UDim2.new(1, -20, 0, 30)
+PasswordInput.Position = UDim2.new(0, 10, 0, 150)
+PasswordInput.PlaceholderText = "Enter your password"
+PasswordInput.TextColor3 = Color3.new(0, 0, 0)
+PasswordInput.BackgroundTransparency = 0.8
+PasswordInput.BackgroundColor3 = Color3.new(1, 1, 1)
+PasswordInput.TextWrapped = true
+PasswordInput.Font = Enum.Font.SourceSans
+PasswordInput.TextSize = 18
+PasswordInput.Parent = frame
+
+local SubmitButton = Instance.new("TextButton")
+SubmitButton.Size = UDim2.new(0.5, 0, 0, 40)
+SubmitButton.Position = UDim2.new(0.25, 0, 0.8, 40)
+SubmitButton.Text = "Login"
+SubmitButton.TextColor3 = Color3.new(1, 1, 1)
+SubmitButton.BackgroundColor3 = Color3.fromRGB(50, 150, 50)
+SubmitButton.BorderSizePixel = 0
+SubmitButton.Font = Enum.Font.SourceSansBold
+SubmitButton.TextSize = 20
+SubmitButton.Parent = frame
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 20, 0, 20)
+CloseButton.Position = UDim2.new(1, -25, 0, 5)
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.new(1, 1, 1)
+CloseButton.BackgroundColor3 = Color3.fromRGB(150, 50, 50)
+CloseButton.BorderSizePixel = 0
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 16
+CloseButton.Parent = frame
+
+CloseButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+
+local validCredentials = {
+    ["Admin"] = "key_5843BhuG4jy5",
+    ["senntences"] = "key_8435KI5UU95",
+    ["lookbehindyou"] = "key_wswks56w5s6w56wddSWSWS",
+    ["homitortuguita"] = "key_swnswn56fd5f5d6",
+    ["coco"] = "hiimcoco",
+    ["DD2NDALT"] = "Keyhack198"
+}
+
+SubmitButton.MouseButton1Click:Connect(function()
+    local username = UsernameInput.Text
+    local password = PasswordInput.Text
+
+    if validCredentials[username] and validCredentials[username] == password then
+        screenGui:Destroy()
+        loadstring(game:HttpGet(""))()
+    else
+        print("Login failed. Please check your credentials.")
+    end
+end)
