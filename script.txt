@@ -101,7 +101,8 @@ local validCredentials = {
     ["lookbehindyou"] = "key_wswks56w5s6w56wddSWSWS",
     ["homitortuguita"] = "key_swnswn56fd5f5d6",
     ["coco"] = "hiimcoco",
-    ["DD2NDALT"] = "Keyhack198"
+    ["DD2NDALT"] = "nig"
+    ["123"] = "123"
 }
 
 SubmitButton.MouseButton1Click:Connect(function()
